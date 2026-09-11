@@ -34,6 +34,15 @@ if in1 == "go investigate":
                     if gear > 0: print("You're armed! Special abilities unlocked.")
                 if fight1 == "feed it":
                     print("You toss some of your meat at the spider!")
+                    flip1 = random.randint(1,2)
+                    if flip1 == 1:
+                        print("It takes ")
+                if fight1 == "run":
+                    print("You try to leave!")
+                    flip2 = random.randint(1,2)
+                    if flip2 == 1:
+                        print("Success! You run back to the path on the right.")
+
 if in1 == "go into town":
     print("You decide to go into town for supplies!")
     in3 = input("Options: go to the butchers, go to the armory, or go to the chapel ")
