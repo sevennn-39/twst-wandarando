@@ -36,12 +36,35 @@ if in1 == "go investigate":
                     print("You toss some of your meat at the spider!")
                     flip1 = random.randint(1,2)
                     if flip1 == 1:
-                        print("It takes ")
+                        print("It takes a bite of the meat, satiated.")
+                    if flip1 == 2:
+                        print("The spider is not pleased with your sacrifice!")
                 if fight1 == "run":
                     print("You try to leave!")
                     flip2 = random.randint(1,2)
                     if flip2 == 1:
-                        print("Success! You run back to the path on the right.")
+                        print("Success! You run back to the path.")
+                    if flip2 == 2:
+                        print("Failure! The spider clicks its jaws menacingly.")
+                if fight1 == "try to reason with it":
+                    print("You try to talk to the spider - do you even know if it has ears?")
+                    talk1 = input("Options: say something smart, say something stupid, yell at it ")
+                    if talk1 == "say something smart":
+                        print("You decide to impress the spider with your knowledge of fun facts!")
+                        flip3 = random.randint(1,2)
+                        if flip3 == 1:
+                            print("The spider is impressed! It trundles off.")
+                        if flip3 == 2:
+                            print("The spider finds your fact not fun enough. It screeches.")
+    if forest1 == "go right":
+        print("You opt for the path on the right!")
+        print("It's quiet here...")
+        right1 = input("Options: keep going, pause to look around ")
+        if right1 == "keep going":
+            print("You decide to walk on! ")
+        if right1 == "pause to look around":
+            print("")
+                        
 
 if in1 == "go into town":
     print("You decide to go into town for supplies!")
@@ -64,4 +87,4 @@ if in1 == "go into town":
         if blessing == "yes":
             blessed += 1
     print("Your duties are done!")
-    reset = input("Back to the beginning? yes/no ")
+    print("Reload for a new route!")
