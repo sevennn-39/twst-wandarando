@@ -35,12 +35,15 @@ if in1 == "go investigate":
                     print("You opted to fight!")
                     fighter += 1
                     if gear > 0: print("You're armed! Special abilities unlocked.")
+                    print("You toss a nearby stick at the spider with all your strength.")
+                    health -= 1
+                    print("The spider is aggravated. ATTACK! The spider rends your flesh.")
                 if fight1 == "feed it":
                     pacifist += 1
                     print("You toss some of your meat at the spider!")
                     flip1 = random.randint(1,2)
                     if flip1 == 1:
-                        print("It takes a bite of the meat, satiated.")
+                        print("It takes a bite of the meat, satiated. For now.")
                     if flip1 == 2:
                         print("The spider is not pleased with your sacrifice!")
                         health -= 1
@@ -50,7 +53,7 @@ if in1 == "go investigate":
                     pacifist += 1
                     flip2 = random.randint(1,2)
                     if flip2 == 1:
-                        print("Success! You run back to the path and continue on.")
+                        print("Success! You run back to the path, taking one glance back at the spider's looming form.")
                     if flip2 == 2:
                         print("Failure! The spider clicks its jaws menacingly.")
                         health -= 1
@@ -64,11 +67,23 @@ if in1 == "go investigate":
                         print("You decide to impress the spider with your knowledge of fun facts!")
                         flip3 = random.randint(1,2)
                         if flip3 == 1:
-                            print("The spider is impressed! It trundles off.")
+                            print("The spider is impressed! It trundles off. For now.")
                         if flip3 == 2:
                             print("The spider finds your fact not fun enough. It screeches.")
                             health -= 1
                             print("ATTACK! The spider rends your flesh.")
+                fight2 = input("Next action! Options: run, fight, try to reason with it ")
+                if health == 9: 
+                    print("Remember, you're injured! Use caution!")
+                if fight2 == "run":
+                    print("You try to run!")
+                    flip4 = random.randint(1,2)
+                    if flip4 == 1:
+                        print("You manage to run away!")
+                if fight2 == "fight":
+                    fighter += 1
+                    print("You grab a stick and toss it at the spider. Interesting.")
+                    
     if forest1 == "go right":
         print("You opt for the path on the right!")
         print("It's quiet here...")
