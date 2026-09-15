@@ -137,10 +137,27 @@ if in1 == "go investigate":
                 print("You walk through the threshold to the room on the left. It's a bedroom - draped with cozy knitted patterns, shades of burgundy and gold.")
                 print("It's homey. Or to be more accurate - it reminds you of home.")
                 print("You walk towards the other room to go check.")
-                print("The room on the right is ")
+                print("The room on the right is another bedroom: but one that belongs to a child.")
+                print("It's blue and white. Rainbow-themed. And it's empty.")
             if house5 == "look at the right room":
                 print("You enter the threshold of the room on the right. It's another bedroom - this one in blue and white, clouds painted on the ceiling and walls. There's a rainbow in the corner.")
                 print("This is a kids' room. It's sad to see all of the hand-carved wooden toys gathering dust.")
+                print("You walk towards the other room.")
+                print("It's another bedroom - burgundy and gold, the kind that holds adults and not children. It's cozy.")
+            if house5 == "look at the dishes":
+                print("You walk over to peer at the dishes in the sink. Bugs hover around them inquisitively. There are a variety of dishes - from large pans to a child's car-patterned plate to an array of silver cutlery.")
+                print("It's not a pretty sight.")
+                house6 = input("Wash the dishes? yes/no ")
+                if house6 == "yes":
+                    pacifist += 1
+                    blessed += 1
+                    print("You wash their dishes. Something about it feels right. The old food is slimy and gross under your touch, but by the end everything is clean.")
+                if house6 == "no":
+                    print("You leave the dishes where they are. You don't want to touch... that.")
+            if house5 == "look at the flowers":
+                pacifist += 1
+                judging += 1
+                print("You take a closer look at the flowers on the table. It's a bouquet: red poppies, rosemary, and marigolds.")
 
 if in1 == "go into town":
     print("You decide to go into town for supplies!")
