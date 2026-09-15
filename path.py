@@ -29,14 +29,16 @@ if in1 == "go investigate":
             if left2 == "look at it":
                 print("You approach the disturbance...")
                 print("It's a giant spider. Fight triggered!")
+                spiderhealth = 10
                 if food > 0: print("You've got meat! Special option unlocked: feed it.")
-                fight1 = input("Options: fight, run, try to reason with it ")
+                fight1 = input("Options: fight, try to reason with it ")
                 if fight1 == "fight":
                     print("You opted to fight!")
                     fighter += 1
-                    if gear > 0: print("You're armed! Special abilities unlocked.")
+                    if gear > 0: print("You're armed! Special protection unlocked.")
                     print("You toss a nearby stick at the spider with all your strength.")
                     health -= 1
+                    spiderhealth -= 1
                     print("The spider is aggravated. ATTACK! The spider rends your flesh.")
                 if fight1 == "feed it":
                     pacifist += 1
@@ -44,18 +46,9 @@ if in1 == "go investigate":
                     flip1 = random.randint(1,2)
                     if flip1 == 1:
                         print("It takes a bite of the meat, satiated. For now.")
+                        spiderhealth += 1
                     if flip1 == 2:
                         print("The spider is not pleased with your sacrifice!")
-                        health -= 1
-                        print("ATTACK! The spider rends your flesh.")
-                if fight1 == "run":
-                    print("You try to leave!")
-                    pacifist += 1
-                    flip2 = random.randint(1,2)
-                    if flip2 == 1:
-                        print("Success! You run back to the path, taking one glance back at the spider's looming form.")
-                    if flip2 == 2:
-                        print("Failure! The spider clicks its jaws menacingly.")
                         health -= 1
                         print("ATTACK! The spider rends your flesh.")
                 if fight1 == "try to reason with it":
@@ -72,17 +65,20 @@ if in1 == "go investigate":
                             print("The spider finds your fact not fun enough. It screeches.")
                             health -= 1
                             print("ATTACK! The spider rends your flesh.")
-                fight2 = input("Next action! Options: run, fight, try to reason with it ")
+                fight2 = input("Next action! Options: fight, try to reason with it ")
                 if health == 9: 
-                    print("Remember, you're injured! Use caution!")
-                if fight2 == "run":
-                    print("You try to run!")
-                    flip4 = random.randint(1,2)
-                    if flip4 == 1:
-                        print("You manage to run away!")
+                    print("Remember, you're injured! Use caution! Your current health: 9/10")
                 if fight2 == "fight":
                     fighter += 1
                     print("You grab a stick and toss it at the spider. Interesting.")
+                    flip5 = random.randint(1,2)
+                    if flip5 == 1:
+                        spiderhealth -= 1
+                        print("Your attack hits!")
+                    if flip5 == 2:
+                        print("Your throw goes wide!")
+                        print("The spider is displeased. ATTACK! The spider grabs you in its mandibles.")
+                        health -= 1
                     
     if forest1 == "go right":
         print("You opt for the path on the right!")
@@ -102,25 +98,49 @@ if in1 == "go investigate":
         house1 = input("Options: barge in, knock, yell ")
         if house1 == "barge in":
             fighter += 1
-            print("You kick the cottage's door open to reveal an empty room!")
-            house2 = input("Options: look around the room, start throwing stuff ")
-            if house2 == "look around the room":
-                print("You walk further into the cottage, noticing the old photos on the walls and half-cleaned dishes in the sink.")
-            if house2 == "start throwing stuff": 
-                print("You trudge further into the cottage, grab the closest heavy object - a lamp - and throw it against the back wall.")
-                print("Nothing happens.")
         if house1 == "yell":
+            judging += 1
             print("You opt to yell through the door - 'HELLO? IS ANYBODY HOME?', but recieve no answer.")
             house4 = input("Options: open the door, knock ")
             if house4 == "open the door":
-                print("You slowly open the door. The cottage is empty and dark.")
-                house5 = input("Options: look around the room, start throwing stuff ")
+                print("You slowly open the door.")
         if house1 == "knock":
             print("You knock politely on the cottage door. Once, then twice. Nothing happens.")
             pacifist += 1
             house3 = input("Options: open the door, ask if anyone's home ")
-            if house3 == "open the door":
-                print("You slowly open the door. The cottage is empty and dark.")
+        if house1 == "open the door":
+            print("You slowly open the door.")
+        print("You enter the cottage but see only an empty room!")
+        house2 = input("Options: look around the room, start throwing stuff ")
+        if house2 == "look around the room":
+            print("You walk further into the cottage, noticing the old photos on the walls and half-cleaned dishes in the sink.")
+        if house2 == "start throwing stuff": 
+            print("You trudge further into the cottage, grab the closest heavy object - a lamp - and throw it against the back wall. A photo shatters on the floor.")
+            print("Nothing happens.")
+        house4 = input("Options: investigate the photos, throw more stuff ")
+        if house4 == "investigate the photos":
+            print("You walk towards the back wall of the cottage, looking at the framed photos.")
+            print("They're all of a family: a mother, a grandmother, and their son/grandson. They smile happily together.")
+            print("The photo is faded.")
+            print("What happened to them?")
+            think1 = input("Options: think about the photos more, investigate more of the cottage. ")
+            if think1 == "think about the photos more":
+                print("You devote some of your attention to the photos again. A kid and a family...")
+                print("Where did they go? Why did they go?")
+                print("There are still dishes in the sink. It's not normal.")
+                print("You turn your attention to the rest of the cottage.")
+            if think1 == "investigate more of the cottage":
+                print("There have to be clues elsewhere, right?")
+            print("You look around the rest of the cottage. There are two rooms off the main one, dirty dishes in the sink, and a vase of wilted flowers on the table.")
+            house5 = input("Options: look at the left room, look at the right room, look at the dishes, look at the flowers ")
+            if house5 == "look at the left room":
+                print("You walk through the threshold to the room on the left. It's a bedroom - draped with cozy knitted patterns, shades of burgundy and gold.")
+                print("It's homey. Or to be more accurate - it reminds you of home.")
+                print("You walk towards the other room to go check.")
+                print("The room on the right is ")
+            if house5 == "look at the right room":
+                print("You enter the threshold of the room on the right. It's another bedroom - this one in blue and white, clouds painted on the ceiling and walls. There's a rainbow in the corner.")
+                print("This is a kids' room. It's sad to see all of the hand-carved wooden toys gathering dust.")
 
 if in1 == "go into town":
     print("You decide to go into town for supplies!")
