@@ -158,6 +158,29 @@ if in1 == "go investigate":
                 pacifist += 1
                 judging += 1
                 print("You take a closer look at the flowers on the table. It's a bouquet: red poppies, rosemary, and marigolds.")
+                print("They're all wilting slowly. It's... sad.")
+            print("You find yourself back in the center of the room again, new information in tow.")
+            house6 = input("Options: leave the house, think about it, take a keepsake ")
+            if house6 == "leave the house":
+                print("You turn on your heel and exit the house, finding yourself back on the path again.")
+            if house6 == "think about it":
+                judging += 1
+                print("You allow yourself a second of respite. It's strange here, and all too quiet. There should be people here, but there aren't. It makes everything seem... off.")
+            if house6 == "take a keepsake":
+                pacifist += 1
+                print("You turn to the photos on the wall, and slowly unhook one. The boy and his mother and grandmother.")
+                print("You think about it for a second, and then slide the photo out of the frame and into your pocket. They might be gone, and you don't know why, but you'll remember.")
+            print("You stand outside the house now, taking a long look back at the house. Then, you continue on.")
+            path1 = input("Options: walk on, look for other civilization ")
+            if path1 == "walk on":
+                print("You continue on the path, looking at the trees as you go.")
+            if path1 == "look for other civilization":
+                print("You look around at the rest of the forest around you - it's thick brush, but you can see a few lights in the distance.")
+                print("You don't know what they are. Maybe houses? Maybe people?")
+            print("You walk on.")
+            path2 = input("Options: look at one of the lights in the distance, keep walking ")
+            
+
 
 if in1 == "go into town":
     print("You decide to go into town for supplies!")
