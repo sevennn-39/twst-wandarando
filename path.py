@@ -179,7 +179,20 @@ if in1 == "go investigate":
                 print("You don't know what they are. Maybe houses? Maybe people?")
             print("You walk on.")
             path2 = input("Options: look at one of the lights in the distance, keep walking ")
-            
+            if path2 == "look at one of the lights in the distance":
+                print("There's a particular shine in the distance that captures your eye - it bobs in the breeze. Maybe a lantern?")
+                print("Either way, you follow it.")
+            if path2 == "keep walking":
+                print("You ignore the lights in the distance and continue on. They're not your business!")
+            print("You continue on until you reach a bobbing light - warm, yellow-tinted, and swaying gently in the breeze.")
+            print("It's mounted on an arching pole, swaying slightly in the wind.")
+            path3 = input("Options: touch it, observe it for a bit ")
+            if path3 == "touch it":
+                health -= 0.5
+                print("You reach out to touch the lantern, and... it shocks you.")
+            if path3 == "observe it":
+                judging += 1
+                print("You don't want to touch it just yet - instead, you look at it for a second. ")
 
 
 if in1 == "go into town":
