@@ -1,6 +1,6 @@
 print("There's a forest here...")
 print("Welcome to Yonder~!")
-print("Warnings: story makes no sense, mild horror, no save system so be really sure about your choices.")
+print("Warnings: story makes no sense, mild horror, no save system so be really sure about your choices, y'know...")
 import random
 food = 0
 sanity = 10
@@ -193,6 +193,24 @@ if in1 == "go investigate":
             if path3 == "observe it":
                 judging += 1
                 print("You don't want to touch it just yet - instead, you look at it for a second. ")
+            print("The lantern sways again. The light inside flickers from a warm shade to cool blue for half a second.")
+            path4 = input("Options: touch the lantern, look at what's holding it up, try to figure out what it's made of ")
+            if path4 == "touch the lantern":
+                health -= 0.5
+                print("The lantern shocks you. Yeowch!")
+            if path4 == "look at what's holding it up":
+                judging += 1
+                print("You peer at the iron pole that the lantern rests on - dark metal, slightly rusted. It's simple, with no particularly ornate designs.")
+            if path4 == "try to figure out what it's made of":
+                judging += 1 
+                print("You peer at the internal workings of the lantern - it's mostly opaque glass, but there are little buzzing flickers within it every so often.")
+                print("Interesting. You've never seen lights like that before.")
+            print("You hear a thump of footsteps as you're standing in front of the lantern - someone's coming up behind you.")
+            speak1 = input("Options: turn around and say hi, stay looking at the lantern ")
+            if speak1 == "turn around and say hi":
+                print("You turn to see a small child in a large coat - they look up at you with wide eyes.")
+                print("They blink once at you before you finally get words out. 'Oh. Hello.'")
+                print("")
 
 
 if in1 == "go into town":
@@ -216,4 +234,4 @@ if in1 == "go into town":
         if blessing == "yes":
             blessed += 1
     print("Your duties are done!")
-    print("Reload for a new route!")
+    print("Reload for a new route! :D")
